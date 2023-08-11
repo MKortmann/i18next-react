@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface Props {
-  t: any
+  t: any;
 }
 
 const getGreetingTime = (d = new Date().getHours()) => {
@@ -10,19 +10,25 @@ const getGreetingTime = (d = new Date().getHours()) => {
   const currentHour = d;
 
   if (currentHour >= split_afternoon && currentHour <= split_evening) {
-      return 'afternoon';
+    return 'afternoon';
   } else if (currentHour >= split_evening) {
-      return 'evening';
-}
+    return 'evening';
+  }
   return 'morning';
-}
+};
 
 export const Greeting: React.FC<Props> = ({ t }) => {
   return (
     <div>
-    <div>{t('footer.date', { date: new Date(), context: getGreetingTime() })}</div>
-    <div>{t('footer.dateShort', { date: new Date(), context: getGreetingTime() })}</div>
-
+      <div>
+        {t('footer.date', { date: new Date(), context: getGreetingTime() })}
+      </div>
+      <div>
+        {t('footer.dateShort', {
+          date: new Date(),
+          context: getGreetingTime(),
+        })}
+      </div>
     </div>
   );
 };

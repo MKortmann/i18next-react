@@ -1,4 +1,4 @@
-import  {useState} from 'react';
+import { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { useTranslation, Trans } from 'react-i18next';
@@ -6,7 +6,7 @@ import { Greeting } from './components/greeting/Greeting';
 
 const lngs: any = {
   en: { nativeName: 'English' },
-  de: { nativeName: 'Deutsch' }
+  de: { nativeName: 'Deutsch' },
 };
 
 function App() {
@@ -17,9 +17,19 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>
-        <p>1- {t('header.part1')}</p>
+          <p>1- {t('header.part1')}</p>
           {Object.keys(lngs).map((lng) => (
-            <button key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }} type="submit" onClick={() => {i18n.changeLanguage(lng); setCounter(count + 1)}}>
+            <button
+              key={lng}
+              style={{
+                fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal',
+              }}
+              type="submit"
+              onClick={() => {
+                i18n.changeLanguage(lng);
+                setCounter(count + 1);
+              }}
+            >
               {lngs[lng].nativeName}
             </button>
           ))}
@@ -31,7 +41,7 @@ function App() {
         </p>
         <p>3- {t('header.part3')}</p>
         <p>
-        <Trans i18nKey="description.part1">
+          <Trans i18nKey="description.part1">
             Edit <code>src/App.js</code> and save to reload.
           </Trans>
         </p>
@@ -44,8 +54,7 @@ function App() {
           {t('description.part2')}
         </a>
         <p>4- {t('header.part4')}</p>
-      <Greeting t={t}></Greeting>
-
+        <Greeting t={t}></Greeting>
       </header>
     </div>
   );

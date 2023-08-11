@@ -13,6 +13,7 @@
     "i18next": "^23.4.4",
     "i18next-browser-languagedetector": "^7.1.0",
     "i18next-http-backend": "^2.2.1",
+    "i18next-locize-backend": "^6.2.2",
     "luxon": "^3.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -22,7 +23,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "watch": "npm run format:write && npm run start",
     "start": "react-scripts start",
+    "format:write": "npx prettier --write .",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -46,6 +49,7 @@
     ]
   },
   "devDependencies": {
-    "@types/luxon": "^3.3.1"
+    "@types/luxon": "^3.3.1",
+    "prettier": "^3.0.1"
   }
 }
