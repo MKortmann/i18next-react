@@ -1,8 +1,21 @@
 {
+  "header": {
+    "part1": "Sprachwechsler",
+    "part2": "Interpolation und Pluralisierung",
+    "part3": "Übersetzung",
+    "part4": "Formatierung und Kontext"
+  },
   "description": {
     "part1": "Ändere <1>src/App.js</1> und speichere um neu zu laden.",
     "part2": "Learn React"
   },
   "counter_one": "Die Sprache wurde erst ein mal gewechselt",
-  "counter_other": "Die Sprache wurde {{count}} mal gewechselt"
+  "counter_other": "Die Sprache wurde {{count}} mal gewechselt",
+  "footer": {
+    "date": "Heute is {{date, DATE_HUGE}}",
+    "dateShort": "Heute is {{date, DATE_SHORT}}",
+    "date_morning": "Guten Morgen! Heute ist {{date, DATE_HUGE}} | Wünsche einen schönen Tag!",
+    "date_afternoon": "Guten Tag! Es ist {{date, DATE_HUGE}}",
+    "date_evening": "Guten Abend! Heute war {{date, DATE_HUGE}}"
+  }
 }

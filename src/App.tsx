@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import  {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { useTranslation, Trans } from 'react-i18next';
-import i18n from './i18n';
+import { Greeting } from './components/greeting/Greeting';
 
 const lngs: any = {
   en: { nativeName: 'English' },
@@ -16,8 +16,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <div>
+        <p>1- {t('header.part1')}</p>
           {Object.keys(lngs).map((lng) => (
             <button key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }} type="submit" onClick={() => {i18n.changeLanguage(lng); setCounter(count + 1)}}>
               {lngs[lng].nativeName}
@@ -25,8 +25,11 @@ function App() {
           ))}
         </div>
         <p>
+          {/* the variable must be count */}
+          <p>2- {t('header.part2')}</p>
           <i>{t('counter', { count })}</i>
         </p>
+        <p>3- {t('header.part3')}</p>
         <p>
         <Trans i18nKey="description.part1">
             Edit <code>src/App.js</code> and save to reload.
@@ -40,6 +43,9 @@ function App() {
         >
           {t('description.part2')}
         </a>
+        <p>4- {t('header.part4')}</p>
+      <Greeting t={t}></Greeting>
+
       </header>
     </div>
   );

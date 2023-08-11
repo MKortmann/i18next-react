@@ -1,6 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
+import { DateTime } from 'luxon';
 
 // Import translations
 import enTranslation from './translations/en.json';
@@ -48,5 +49,14 @@ i18n
     //   }
     // }
   });
+  
+  // adds a custom formatter to the i18next library. The formatter is given a name 'DATE_HUGE', and it is defined using an arrow function that takes three parameters: value, lng, options.
+  // value: value to format, in this case, JavaScript Date object.
+  // lng: it the language code for the desired locale. It tells the formatter which locale to use for formatting 
+  // 'DATE_HUGE: is a predefined Luxon format string representing a large, human-readable date format.
+  i18n.services.formatter.add('DATE_HUGE', (value, lng, options) => {
+    return DateTime.fromJSDate(value).setLocale(lng).toLocaleString(DateTime.DATE_HUGE)
+  });
+
 
 export default i18n;

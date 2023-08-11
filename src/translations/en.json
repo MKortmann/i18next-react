@@ -1,8 +1,21 @@
 {
+  "header": {
+    "part1": "Language Switcher",
+    "part2": "Interpolation und Pluralization",
+    "part3": "Translation",
+    "part4": "Formating & Context"
+  },
   "description": {
     "part1": "Edit <1>src/App.js</1> and save to reload.",
     "part2": "Lerne React"
   },
   "counter_one": "Changed language once",
-  "counter_other": "Change language already {{count}} times"
+  "counter_other": "Change language already {{count}} times",
+  "footer": {
+    "date": "Today is {{date, DATE_HUGE}}",
+    "dateShort": "Today is {{date, DATE_SHORT}}",
+    "date_morning": "Good morning! Heute ist {{date, DATE_HUGE}} | Have a nice day!",
+    "date_afternoon": "Good afternoon! It's {{date, DATE_HUGE}}",
+    "date_evening": "Good evening! Today was the {{date, DATE_HUGE}}"
+  }
 }
