@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Suspense} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Loading } from './components/loading/Loading'
 
-// import i18n (needs to be bundled ;))
+
 import './i18n';
 
 const root = ReactDOM.createRoot(
@@ -12,7 +13,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Suspense fallback={<Loading />}>
+      <App />
+    </Suspense>
   </React.StrictMode>
 );
 
