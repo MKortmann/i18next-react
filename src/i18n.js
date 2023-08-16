@@ -1,7 +1,8 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import Backend from 'i18next-locize-backend';
+// import Backend from 'i18next-locize-backend';
+import Backend from 'i18next-http-backend';
 import { DateTime } from 'luxon';
 
 // Import translations
@@ -23,10 +24,10 @@ i18n
   .init({
     debug: true,
     fallbackLng: 'en',
-    backend: {
-      projectId: 'ad27f023-3c23-4e60-b031-75f1e1445270',
-      apiKey: 'a5b87c60-eccd-43f6-a17b-175970006aa0',
-    }
+    // backend: {
+    //   projectId: 'ad27f023-3c23-4e60-b031-75f1e1445270',
+    //   apiKey: 'a5b87c60-eccd-43f6-a17b-175970006aa0',
+    // }
     // interpolation: {
     //   escapeValue: false, // not needed for react as it escapes by default
     // },
